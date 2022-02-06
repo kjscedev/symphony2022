@@ -1,0 +1,12 @@
+.logo{
+    height: 250px;
+}
+.gallery-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery{
+    height:35px;
+    margin: 5px;
+}
