@@ -14,19 +14,29 @@ const Home = (props) => {
           <div className="gallery-container">
             <img className="logo" src="/assets/gallery.png"></img>
             <div style={{display:"flex",flexDirection:"column"}}>
+              <div className="gal-aftermovie">
+                <img className="gallery" src="/assets/gallery-icon.png"></img>
+                  Gallery
+              </div>
               <div>
-              <img className="gallery" src="/assets/gallery-icon.png"></img>
-                gallery</div>
-              <div>
-              <img className="gallery" src="/assets/aftermovie.png"></img>
-              aftermovie
-                </div>
+                <img className="gallery" src="/assets/aftermovie.png"></img>
+                  Aftermovie
+              </div>
             </div>
           </div>
-
-        
         </div>
-        <div className="col">{"GAME"}</div>
+
+        <div className="col">
+          <div className="contact">
+            <img className="gallery" src="/assets/youtube.png"></img>
+            <img className="gallery" src="/assets/twitter.png"></img>
+            <img className="gallery" src="/assets/facebook.png"></img>
+            <img className="gallery" src="/assets/insta.png"></img>
+          </div>
+          <div className="gamecontainer">
+
+          </div>
+        </div>
   </div>
 </div>
   );

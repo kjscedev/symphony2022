@@ -10,3 +10,17 @@
     height:35px;
     margin: 5px;
 }
+.gal-aftermovie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact{
+    margin-top: 15px;
+    display: flex;
+    justify-content: right;
+    align-items: left;
+}
+.gamecontainer{
+    
+}
