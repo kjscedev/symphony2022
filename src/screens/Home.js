@@ -7,7 +7,7 @@ const Home = (props) => {
   useEffect(() => {}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="container">
+    <div className="container" style={{background}}>
       <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2">
         <div className="col">
           <img className="logo" src="/assets/logo_Sym.png"></img>
@@ -28,13 +28,15 @@ const Home = (props) => {
 
         <div className="col">
           <div className="contact">
-            <img className="gallery" src="/assets/youtube.png"></img>
-            <img className="gallery" src="/assets/twitter.png"></img>
-            <img className="gallery" src="/assets/facebook.png"></img>
-            <img className="gallery" src="/assets/insta.png"></img>
+            <img className="icons" src="/assets/youtube.png"></img>
+            <img className="icons" src="/assets/twitter.png"></img>
+            <img className="icons" src="/assets/facebook.png"></img>
+            <img className="icons" src="/assets/insta.png"></img>
           </div>
           <div className="gamecontainer">
-
+            <div>
+              <p style={{color:"red",fontWeight:"bold"}}>High Score:</p>
+            </div>
           </div>
         </div>
   </div>

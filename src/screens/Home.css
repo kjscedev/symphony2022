@@ -7,7 +7,7 @@
     align-items: center;
 }
 .gallery{
-    height:35px;
+    height:30px;
     margin: 5px;
 }
 .gal-aftermovie{
@@ -21,6 +21,10 @@
     justify-content: right;
     align-items: left;
 }
+.icons{
+    height: 30px;
+    margin: 4px;
+}
 .gamecontainer{
-    
+    margin: 50px;
 }
