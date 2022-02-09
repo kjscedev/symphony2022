@@ -44,7 +44,7 @@ const Home = (props) => {
                 ></img>
                 Gallery
               </div>
-              <div>
+              <div className="am-container">
                 <img
                   alt="aftermovie"
                   className="gallery"

@@ -6,14 +6,19 @@
     justify-content: center;
     align-items: center;
 }
+.am-container {
+    cursor: pointer;
+}
 .gallery{
     height:30px;
     margin: 5px;
+    cursor: pointer;
 }
 .gal-aftermovie{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .contact{
     margin-top: 15px;
@@ -24,6 +29,7 @@
 .icons{
     height: 30px;
     margin: 4px;
+    cursor: pointer;
 }
 .gamecontainer{
     margin: 50px;
