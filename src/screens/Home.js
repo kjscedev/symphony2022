@@ -63,6 +63,8 @@ const Home = (props) => {
               <p style={{ color: "red", fontWeight: "bold" }}>High Score:</p>
             </div>
           </div>
+
+          <canvas id="myCanvas" width="500" height="300"></canvas>
         </div>
       </div>
     </div>
