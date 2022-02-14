@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import LatinPop from "../components/LatinPop";
 import "./Home.css";
 
 const Home = (props) => {
@@ -32,7 +33,8 @@ const Home = (props) => {
           </div>
           <div className="gallery-container">
             {/* gallery */}
-            <img alt="Gallery" className="logo" src="/assets/gallery.png"></img>
+            {/* <img alt="Gallery" className="logo" src="/assets/gallery.png"></img> */}
+            <LatinPop/>
 
             {/* icons  */}
             <div style={{ display: "flex", flexDirection: "column" }}>
