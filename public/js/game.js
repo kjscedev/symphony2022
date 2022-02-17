@@ -80,14 +80,14 @@ window.onload = () => {
   function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-    ctx.fillStyle = "#90217F";
+    ctx.fillStyle = "#03045e";
     ctx.fill();
     ctx.closePath();
   }
   function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#001219";
     ctx.fill();
     ctx.closePath();
   }
@@ -101,7 +101,7 @@ window.onload = () => {
           bricks[c][r].y = brickY;
           ctx.beginPath();
           ctx.rect(brickX, brickY, brickWidth, brickHeight);
-          ctx.fillStyle = "#ff2500";
+          ctx.fillStyle = "#A52A2A";
           ctx.fill();
           ctx.closePath();
         }
