@@ -19,7 +19,7 @@ window.onload = () => {
   var brickOffsetTop = 30;
   var brickOffsetLeft = 30;
   var score = 0;
-  var lives = 10;
+  var lives = 3;
 
   var bricks = [];
   for (c = 0; c < brickColumnCount; c++) {
@@ -68,7 +68,7 @@ window.onload = () => {
             b.status = 0;
             score++;
             if (score == brickRowCount * brickColumnCount) {
-              alert("you won :)!");
+              alert("You won :)!");
               document.location.reload();
             }
           }
@@ -139,7 +139,7 @@ window.onload = () => {
       } else {
         lives--;
         if (!lives) {
-          alert("GAME OVER");
+          alert("GAME OVER, You lost! :(");
           document.location.reload();
         } else {
           x = canvas.width / 2;
