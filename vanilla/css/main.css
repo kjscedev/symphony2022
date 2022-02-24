@@ -3,6 +3,11 @@ body {
     background-image: url('./assets/background.png');
 }
 
+#canvas {
+    /* height: 50vh;
+    width: 80vw; */
+}
+
 .logo{
     height: 250px;
 }

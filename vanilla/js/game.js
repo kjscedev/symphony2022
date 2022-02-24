@@ -1,6 +1,9 @@
 window.onload = () => {
   var canvas = document.getElementById("myCanvas");
-  console.log("asdlfkjhalks", canvas);
+
+  canvas.setAttribute("height", 400)
+  canvas.setAttribute("width", 350)
+
   var ctx = canvas.getContext("2d");
   var ballRadius = 10;
   var x = canvas.width / 2;
