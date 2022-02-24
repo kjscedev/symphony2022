@@ -10,6 +10,8 @@
       content="Official Website for KJSCE Symphony 2022"
     />
 
+    <link rel="stylesheet" href="./css/main.css">
+
     <!-- bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -20,9 +22,71 @@
 
     <title>Symphony 2022</title>
   </head>
-  <body>
-    <h1>Hello</h1>
-    <canvas id="myCanvas" width="500" height="300"></canvas>
+  <body style="background-image: url('./assets/background.png');">
+    <div class="container">
+      <!-- {/* header */}x` -->
+      <div class="col">
+        <div class="contact">
+          <img alt="youtube" class="icons" src="./assets/youtube.png"></img>
+          <img alt="twitter" class="icons" src="./assets/twitter.png"></img>
+          <img
+            alt="facebook"
+            class="icons"
+            src="./assets/facebook.png"
+          ></img>
+          <img alt="insta" class="icons" src="./assets/insta.png"></img>
+        </div>
+      </div>
+      <!-- {/* main */} -->
+      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mt-5">
+        <div class="col">
+          <!-- {/* logo */} -->
+          <div class="d-flex justify-content-center align-items-center">
+            <img
+              alt="Symphony"
+              class="logo"
+              src="./assets/logo_Sym.png"
+            ></img>
+          </div>
+          <div class="gallery-container">
+            <!-- {/* gallery */} -->
+            <!-- {/* <img alt="Gallery" class="logo" src="/assets/gallery.png"></img> */} -->
+            <LatinPop/>
+
+            <!-- {/* icons  */} -->
+            <div style="display: flex; flex-direction: column">
+              <div class="gal-aftermovie">
+                <img
+                  alt="gallery"
+                  class="gallery"
+                  src="./assets/gallery-icon.png"
+                ></img>
+                Gallery
+              </div>
+              <div class="am-container">
+                <img
+                  alt="aftermovie"
+                  class="gallery"
+                  src="./assets/aftermovie.png"
+                ></img>
+                Aftermovie
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- {/* game  */} -->
+        <div class="col game-col">
+          <div class="gamecontainer">
+            <div>
+              <p style=" color:black; font-weight:bold">Press Space bar to start playing the game!</p>
+            </div>
+          </div>
+
+          <canvas id="myCanvas" width="500" height="300"></canvas>
+        </div>
+      </div>
+    </div>
 
     <!-- game js -->
     <script src="./js/game.js"></script>
