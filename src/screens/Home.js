@@ -62,7 +62,7 @@ const Home = (props) => {
         <div className="col game-col">
           <div className="gamecontainer">
             <div>
-              <p style={{ color: "red", fontWeight: "bold" }}>High Score:</p>
+              {/* <p style={{ color: "red", fontWeight: "bold" }}>High Score:</p> */}
             </div>
           </div>
 

@@ -162,5 +162,10 @@ window.onload = () => {
     requestAnimationFrame(draw);
   }
 
-  draw();
+  // spaceKeyHandler(); 
+  document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+      draw(); 
+    }
+}
 };
