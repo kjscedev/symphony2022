@@ -1,48 +1,49 @@
 body {
-    background-color: red;
-    background-image: url('./assets/background.png');
+  background-color: red;
+  background-image: url("./assets/background.png");
 }
 
-#canvas {
-    /* height: 50vh;
-    width: 80vw; */
+canvas {
+  /* height: 50vh;
+  width: 30vw; */
+  border: 6px solid purple !important;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-.logo{
-    height: 250px;
+.logo {
+  height: 200px;
 }
-.gallery-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .am-container {
-    cursor: pointer;
+  cursor: pointer;
 }
-.gallery{
-    height:30px;
-    margin: 5px;
-    cursor: pointer;
+.gallery {
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
 }
-.gal-aftermovie{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.gal-aftermovie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-.contact{
-    margin-top: 15px;
-    display: flex;
-    justify-content: right;
-    align-items: left;
+.contact {
+  margin-top: 15px;
+  display: flex;
+  justify-content: right;
+  align-items: left;
 }
-.icons{
-    height: 30px;
-    margin: 4px;
-    cursor: pointer;
+.icons {
+  height: 30px;
+  margin: 4px;
+  cursor: pointer;
 }
-.gamecontainer{
-    margin: 50px;
+.gamecontainer {
+  margin: 50px;
 }
-
-

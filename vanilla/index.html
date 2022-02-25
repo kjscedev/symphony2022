@@ -50,8 +50,8 @@
           </div>
           <div class="gallery-container">
             <!-- {/* gallery */} -->
-            <!-- {/* <img alt="Gallery" class="logo" src="/assets/gallery.png"></img> */} -->
-            <LatinPop/>
+            <img alt="Gallery" class="logo" src="./assets/gallery.png"></img>
+            <!-- <LatinPop/> -->
 
             <!-- {/* icons  */} -->
             <div style="display: flex; flex-direction: column">
@@ -84,6 +84,11 @@
           </div>
 
           <canvas id="myCanvas"></canvas>
+          <div class="d-flex justify-content-center justify-content-around mb-5">
+              <div class="btn btn-primary" onkeyup="leftKeyUp()" onkeydown="leftKeyDown()">left</div>
+              <div class="btn btn-primary" onclick="spacePress()">start</div>
+              <div class="btn btn-primary" onkeyup="rightKeyUp()" onkeydown="rightKeyDown()">right</div>
+          </div>
         </div>
       </div>
     </div>
