@@ -9,7 +9,11 @@
       name="description"
       content="Official Website for KJSCE Symphony 2022"
     />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 
     <!-- bootstrap CSS -->
@@ -28,14 +32,15 @@
       <!-- {/* header */}x` -->
       <div class="col">
         <div class="contact">
-          <img alt="youtube" class="icons" src="./assets/youtube.png"></img>
-          <img alt="twitter" class="icons" src="./assets/twitter.png"></img>
+          <img alt="youtube" class="icons" src="./assets/youtube.png" onclick="openYoutube()"></img>
+          <img alt="twitter" class="icons" src="./assets/twitter.png" onclick="openTwitter()"></img>
           <img
             alt="facebook"
             class="icons"
             src="./assets/facebook.png"
+            onclick="openFacebook()"
           ></img>
-          <img alt="insta" class="icons" src="./assets/insta.png"></img>
+          <img alt="insta" class="icons" src="./assets/insta.png" onclick="openInstagram()"></img>
         </div>
       </div>
       <!-- {/* main */} -->
@@ -58,7 +63,7 @@
             <div><img src="./assets/9.png" height=450" width="400"/></div>
            </div>
 
-            <div style="display: flex; flex-direction: column; color: #3E0D80; font-family: Source Sans Pro;">
+            <div style="display: flex; flex-direction: column; color: #3E0D80; font-family: Source Sans Pro; font-weight: 400;">
               <div class="gal-aftermovie" onclick="openGallery()">
                 <img
                   alt="gallery"
@@ -83,7 +88,7 @@
         <div class="col game-col">
           <div class="gamecontainer">
             <div class="game-instruction">
-              <p style=" color:black; font-weight:bold">Press Space bar/Start button to start playing the game!</p>
+              <p style=" color:black; font-weight:bold; font-family: Source Sans Pro;">Press Space bar/Start button to start playing the game!</p>
             </div>
           </div>
 
