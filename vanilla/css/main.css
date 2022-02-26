@@ -37,7 +37,6 @@ canvas {
   cursor: pointer;
 }
 
-
 .contact {
   margin-top: 15px;
   display: flex;
@@ -89,12 +88,9 @@ canvas {
 }
 
 .game-instruction {
-    text-align: center;
-    height: 10%;
+  text-align: center;
+  height: 10%;
 }
-
-
-
 
 @media only screen and (max-width: 768px) {
   .gallery-container {
@@ -103,10 +99,9 @@ canvas {
   #myCanvas {
     height: 25vh;
     width: 95vw;
-}
-.images {
+  }
+  .images {
     display: flex;
     justify-content: center;
-}
-
+  }
 }
