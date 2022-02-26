@@ -2,7 +2,7 @@ window.addEventListener("load", (event) => {
   const replaceImage = (i) => {
     document.getElementById(
       "images"
-    ).innerHTML = `<div><img src="./assets/${i}.png"/></div>`;
+    ).innerHTML = `<div><img src="./assets/${i}.png"  height=450" width="400"/></div>`;
   };
 
   var imgNo = 1;
@@ -14,5 +14,5 @@ window.addEventListener("load", (event) => {
     } else {
       imgNo = 1;
     }
-  }, 2000);
+  }, 5000);
 });

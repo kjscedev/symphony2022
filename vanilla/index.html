@@ -39,7 +39,7 @@
         </div>
       </div>
       <!-- {/* main */} -->
-      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mt-5">
+      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mt-1">
         <div class="col">
           <!-- {/* logo */} -->
           <div class="d-flex justify-content-center align-items-center">
@@ -55,7 +55,7 @@
             <!-- <LatinPop/> -->
             <!-- {/* icons  */} -->
            <div id="images">
-            <div><img src="./assets/9.png"/></div>
+            <div><img src="./assets/9.png" height=450" width="400"/></div>
            </div>
 
             <div style="display: flex; flex-direction: column">
@@ -82,13 +82,13 @@
         <!-- {/* game  */} -->
         <div class="col game-col">
           <div class="gamecontainer">
-            <div>
-              <p style=" color:black; font-weight:bold">Press Space bar to start playing the game!</p>
+            <div class="game-instruction">
+              <p style=" color:black; font-weight:bold">Press Space bar/Start button to start playing the game!</p>
             </div>
           </div>
 
           <canvas id="myCanvas"></canvas>
-          <div class="d-flex justify-content-center justify-content-around mb-5">
+          <div class="d-flex justify-content-center justify-content-around">
               <button class="btn first" onkeyup="leftKeyUp()" onkeydown="leftKeyDown()">left</button>
               <button class="btn first" onclick="spacePress()">start</button>
               <button class="btn first" onkeyup="rightKeyUp()" onkeydown="rightKeyDown()">right</button>

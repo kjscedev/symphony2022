@@ -8,7 +8,7 @@ canvas {
   width: 30vw; */
   border: 6px solid purple !important;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .logo {
@@ -21,6 +21,9 @@ canvas {
 }
 .am-container {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .gallery {
   height: 30px;
@@ -33,6 +36,12 @@ canvas {
   align-items: center;
   cursor: pointer;
 }
+
+/* .images {
+    height: 25vh;
+    width: 25vw;
+} */
+
 .contact {
   margin-top: 15px;
   display: flex;
@@ -45,7 +54,7 @@ canvas {
   cursor: pointer;
 }
 .gamecontainer {
-  margin: 50px;
+  margin: 15px;
 }
 
 .btn {
@@ -69,8 +78,7 @@ canvas {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
-.btn:hover,
-.btn:focus {
+.btn:hover {
   color: #fff;
   outline: 0;
 }
@@ -82,6 +90,11 @@ canvas {
 .first:hover {
   box-shadow: 0 0 40px 40px purple inset;
   color: aliceblue;
+}
+
+.game-instruction {
+    text-align: center;
+    height: 10%;
 }
 
 @media only screen and (max-width: 768px) {
