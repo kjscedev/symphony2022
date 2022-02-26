@@ -37,10 +37,6 @@ canvas {
   cursor: pointer;
 }
 
-/* .images {
-    height: 25vh;
-    width: 25vw;
-} */
 
 .contact {
   margin-top: 15px;
@@ -97,8 +93,20 @@ canvas {
     height: 10%;
 }
 
+
+
+
 @media only screen and (max-width: 768px) {
   .gallery-container {
     flex-direction: column;
   }
+  #myCanvas {
+    height: 25vh;
+    width: 95vw;
+}
+.images {
+    display: flex;
+    justify-content: center;
+}
+
 }
