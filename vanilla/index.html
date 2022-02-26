@@ -82,17 +82,34 @@
         <!-- {/* game  */} -->
         <div class="col game-col">
           <div class="gamecontainer">
-            <div class="game-instruction">
-              <p style=" color:black; font-weight:bold; font-family: Source Sans Pro; font-size: larger;">Press Space bar/Start button to start playing the game!</p>
-            </div>
+           
           </div>
 
-          <canvas id="myCanvas"></canvas>
-          <div class="d-flex justify-content-center justify-content-around">
-              <button class="btn first" onkeyup="leftKeyUp()" onkeydown="leftKeyDown()">left</button>
-              <button class="btn first" onclick="spacePress()">start</button>
-              <button class="btn first" onkeyup="rightKeyUp()" onkeydown="rightKeyDown()">right</button>
+          <!-- <canvas id="myCanvas"></canvas> -->
+          <div class="tictactoe">
+            <div class="wrapper">
+              <div class="box box-1" data-index='0'></div>
+              <div class="box box-2" data-index='1'></div>
+              <div class="box box-3" data-index='2'></div>
+              <div class="box box-4" data-index='3'></div>
+              <div class="box" data-index='4'></div>
+              <div class="box box-6" data-index='5'></div>
+              <div class="box box-7" data-index='6'></div>
+              <div class="box box-8" data-index='7'></div>
+              <div class="box box-9" data-index='8'></div>
+              <div class="option-box">
+                 <p>play as</p>
+                 <div class="options">
+                     <h1 class="option">x</h1>
+                     <h1 class="option">o</h1>
+               </div>
+               </div>
+               <div class="dialog-box"></div>
+           </div>
+           <button id='reset'>Reset Game</button>
           </div>
+    
+          <!-- <div class="slider"></div> -->
         </div>
       </div>
     </div>

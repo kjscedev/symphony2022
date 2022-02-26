@@ -46,3 +46,5 @@ function openInstagram() {
 function openYoutube() {
   window.open("https://youtube.com/c/KJSCELive", "_blank");
 }
+
+

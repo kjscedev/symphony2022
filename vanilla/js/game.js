@@ -1,190 +1,219 @@
-var canvas = document.getElementById("myCanvas");
+const boxes = document.querySelectorAll(".box");
+let playerChoice, computerChoice;
+const winningCombination = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+let nodeIndex = Array(9).fill(null);
 
-canvas.setAttribute("height", 400);
-canvas.setAttribute("width", 600);
+//player's turn
+function playerTurn() {
+  let el = this;
+  let ind = parseInt(el.getAttribute("data-index"));
 
-var ctx = canvas.getContext("2d");
-var ballRadius = 10;
-var x = canvas.width / 2;
-var y = canvas.height - 30;
-var dx = 2;
-var dy = -2;
-var paddleHeight = 10;
-var paddleWidth = 75;
-var paddleX = (canvas.width - paddleWidth) / 2;
-var rightPressed = false;
-var leftPressed = false;
-var brickRowCount = 6;
-var brickColumnCount = 5;
-var brickWidth = 75;
-var brickHeight = 20;
-var brickPadding = 10;
-var brickOffsetTop = 30;
-var brickOffsetLeft = 30;
-var score = 0;
-var lives = 3;
-
-var bricks = [];
-for (c = 0; c < brickColumnCount; c++) {
-  bricks[c] = [];
-  for (r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = { x: 0, y: 0, status: 1 };
+  //return if already drawn
+  if (el.innerText) {
+    return;
   }
+
+  nodeIndex[ind] = playerChoice;
+
+  el.innerText = playerChoice;
+
+  let result = winnerCheck(playerChoice);
+
+  if (result) {
+    return gameOver(result, playerChoice);
+  }
+
+  return computerTurn();
 }
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-document.addEventListener("mousemove", mouseMoveHandler, false);
+//computer's turn
+function computerTurn() {
+  let key;
 
-function leftKeyDown() {
-  leftPressed = true;
-}
-function leftKeyUp() {
-  leftPressed = false;
-}
-function rightKeyDown() {
-  rightPressed = true;
-}
-function rightKeyUp() {
-  rightPressed = false;
-}
+  //return if no empty box left
+  if (!nodeIndex.includes(null)) {
+    return gameDraw();
+  }
 
-function keyDownHandler(e) {
-  if (e.keyCode == 39) {
-    rightPressed = true;
-  } else if (e.keyCode == 37) {
-    leftPressed = true;
-  }
-}
-function keyUpHandler(e) {
-  if (e.keyCode == 39) {
-    rightPressed = false;
-  } else if (e.keyCode == 37) {
-    leftPressed = false;
-  }
-}
-function mouseMoveHandler(e) {
-  var relativeX = e.clientX - canvas.offsetLeft;
-  if (relativeX > 0 && relativeX < canvas.width) {
-    paddleX = relativeX - paddleWidth / 2;
-  }
-}
-function collisionDetection() {
-  for (c = 0; c < brickColumnCount; c++) {
-    for (r = 0; r < brickRowCount; r++) {
-      var b = bricks[c][r];
-      if (b.status == 1) {
-        if (
-          x > b.x &&
-          x < b.x + brickWidth &&
-          y > b.y &&
-          y < b.y + brickHeight
-        ) {
-          dy = -dy;
-          b.status = 0;
-          score++;
-          if (score == brickRowCount * brickColumnCount) {
-            alert("You won :)!");
-            document.location.reload();
-          }
+  //checking who is winning
+  winningCombination.forEach((elem) => {
+    let userCount = 0;
+
+    elem.map((ind) => {
+      //blocking if the player is winning
+      if (nodeIndex[ind] === playerChoice) {
+        userCount++;
+        if (userCount === 2) {
+          elem.map((i) => {
+            if (nodeIndex[i] === null) {
+              return (key = i);
+            }
+          });
         }
       }
-    }
-  }
-}
+    });
+  });
 
-function drawBall() {
-  ctx.beginPath();
-  ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-  ctx.fillStyle = "#03045e";
-  ctx.fill();
-  ctx.closePath();
-}
-function drawPaddle() {
-  ctx.beginPath();
-  ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = "#001219";
-  ctx.fill();
-  ctx.closePath();
-}
-function drawBricks() {
-  for (c = 0; c < brickColumnCount; c++) {
-    for (r = 0; r < brickRowCount; r++) {
-      if (bricks[c][r].status == 1) {
-        var brickX = r * (brickWidth + brickPadding) + brickOffsetLeft;
-        var brickY = c * (brickHeight + brickPadding) + brickOffsetTop;
-        bricks[c][r].x = brickX;
-        bricks[c][r].y = brickY;
-        ctx.beginPath();
-        ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = "#A52A2A";
-        ctx.fill();
-        ctx.closePath();
+  winningCombination.forEach((elem) => {
+    let computerCount = 0;
+
+    elem.map((ind) => {
+      //if the computer has chance make it first
+      if (nodeIndex[ind] === computerChoice) {
+        computerCount++;
+        if (computerCount === 2) {
+          elem.map((i) => {
+            if (nodeIndex[i] === null) {
+              return (key = i);
+            }
+          });
+        }
       }
+    });
+  });
+
+  if (key !== undefined) {
+    nodeIndex[key] = computerChoice;
+    boxes[key].innerText = computerChoice;
+
+    let result = winnerCheck(computerChoice);
+
+    if (result) {
+      return gameOver(result, computerChoice);
     }
+
+    return;
   }
-}
-function drawScore() {
-  ctx.font = "20px Source Sans";
-  ctx.fillStyle = "#000000";
-  ctx.fillText("Score: " + score, 8, 20);
-}
-function drawLives() {
-  ctx.font = "20px Source Sans";
-  ctx.fillStyle = "#000000";
-  ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
+
+  //random index to draw x
+  let random = () => {
+    return Math.floor(Math.random() * 9);
+  };
+  key = random();
+
+  while (nodeIndex[key] !== null) {
+    key = random();
+  }
+
+  nodeIndex[key] = computerChoice;
+  boxes[key].innerText = computerChoice;
+
+  let result = winnerCheck(computerChoice);
+
+  if (result) {
+    return gameOver(result, computerChoice);
+  }
+
+  return;
 }
 
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBricks();
-  drawBall();
-  drawPaddle();
-  drawScore();
-  drawLives();
-  collisionDetection();
-
-  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-    dx = -dx;
+function winnerCheck(turn) {
+  if (!nodeIndex.includes(null)) {
+    return gameDraw();
   }
-  if (y + dy < ballRadius) {
-    dy = -dy;
-  } else if (y + dy > canvas.height - ballRadius) {
-    if (x > paddleX && x < paddleX + paddleWidth) {
-      dy = -dy;
-    } else {
-      lives--;
-      if (!lives) {
-        alert("GAME OVER, You lost! :(");
-        document.location.reload();
-      } else {
-        x = canvas.width / 2;
-        y = canvas.height - 30;
-        dx = 3;
-        dy = -3;
-        paddleX = (canvas.width - paddleWidth) / 2;
+  let res = null;
+
+  winningCombination.map((elem) => {
+    let turnCount = 0;
+
+    elem.map((ind) => {
+      if (nodeIndex[ind] === turn) {
+        turnCount++;
+        if (turnCount === 3) {
+          res = elem;
+        }
       }
-    }
-  }
+    });
+  });
 
-  if (rightPressed && paddleX < canvas.width - paddleWidth) {
-    paddleX += 7;
-  } else if (leftPressed && paddleX > 0) {
-    paddleX -= 7;
-  }
-
-  x += dx;
-  y += dy;
-  requestAnimationFrame(draw);
+  return res;
 }
 
-// spaceKeyHandler();
-document.body.onkeyup = function (e) {
-  if (e.keyCode == 32) {
-    draw();
+function gameOver(elem, turn) {
+  elem.map((ind) => {
+    boxes[ind].style.backgroundColor = "#a7bcb9";
+    boxes[ind].style.color = "#fff";
+  });
+
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].onclick = null;
   }
+
+  return whoWon(turn);
+}
+
+function whoWon(turn) {
+  const dialogBox = document.querySelector(".dialog-box");
+  dialogBox.style.display = "block";
+
+  if (turn === playerChoice) {
+    dialogBox.innerText = "You Won";
+    return;
+  }
+
+  dialogBox.innerText = "Computer Won";
+  return;
+}
+
+function gameDraw() {
+  const dialogBox = document.querySelector(".dialog-box");
+  dialogBox.style.display = "block";
+  dialogBox.innerText = "Game Draw";
+  return;
+}
+
+function addEvent() {
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].onclick = playerTurn;
+  }
+}
+
+const chooseTurn = (e) => {
+  let choosen = e.target.innerText;
+
+  if (choosen === "x") {
+    playerChoice = "x";
+    computerChoice = "o";
+    document.querySelector(".option-box").style.display = "none";
+    return addEvent();
+  }
+
+  playerChoice = "o";
+  computerChoice = "x";
+  document.querySelector(".option-box").style.display = "none";
+  addEvent();
+  return computerTurn();
 };
 
-function spacePress() {
-  draw();
+window.addEventListener("DOMContentLoaded", startGame);
+
+function startGame() {
+  document.querySelector(".option-box").style.display = "flex";
+  let options = document.querySelectorAll(".option");
+  options[0].onclick = chooseTurn;
+  options[1].onclick = chooseTurn;
 }
+
+document.getElementById("reset").onclick = () => {
+  const dialogBox = document.querySelector(".dialog-box");
+  dialogBox.style.display = "none";
+  playerChoice = null;
+  computerChoice = null;
+  nodeIndex = Array(9).fill(null);
+  for (let i = 0; i < 9; i++) {
+    boxes[i].innerText = "";
+    boxes[i].style.backgroundColor = "#fff";
+    boxes[i].style.color = "#848484";
+    boxes[i].onclick = null;
+  }
+  return startGame();
+};
