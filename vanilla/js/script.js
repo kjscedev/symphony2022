@@ -16,3 +16,15 @@ window.addEventListener("load", (event) => {
     }
   }, 5000);
 });
+
+function openAfterMovie() {
+  window.open(
+    "https://youtu.be/mIBRug2k0qw",
+    "_blank"
+  );
+}
+
+function openGallery() {
+  window.open("https://drive.google.com/drive/folders/1K7VGrVR-_xqDp1PNFaCmMpBb3-2kEBVF?usp=sharing", "_blank");
+}
+
