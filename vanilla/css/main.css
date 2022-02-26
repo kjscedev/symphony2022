@@ -1,11 +1,11 @@
 
 body {
-  background-image: url("../assets/background.png");
+  background-image: url("../assets/background.gif");
 }
 
 @media (max-width: 480px) {
   body {
-    background-image: url("https://picsum.photos/seed/picsum/600/1200");
+    background-image: url("../assets/mobile_background.gif");
   }
 }
 
@@ -18,7 +18,7 @@ canvas {
 }
 
 .logo {
-  height: 200px;
+  height: 250px;
 }
 .gallery-container {
   display: flex;
@@ -55,7 +55,7 @@ canvas {
   cursor: pointer;
 }
 .gamecontainer {
-  margin: 15px;
+  padding-top: 50px;
 }
 
 .btn {
@@ -95,7 +95,8 @@ canvas {
 
 .game-instruction {
   text-align: center;
-  height: 10%;
+  height: 20%;
+  padding-bottom: 50px;
 }
 
 @media only screen and (max-width: 768px) {
