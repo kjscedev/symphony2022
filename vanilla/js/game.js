@@ -211,7 +211,7 @@ document.getElementById("reset").onclick = () => {
   nodeIndex = Array(9).fill(null);
   for (let i = 0; i < 9; i++) {
     boxes[i].innerText = "";
-    boxes[i].style.backgroundColor = "#fff";
+    boxes[i].style.backgroundColor = "transparent";
     boxes[i].style.color = "#848484";
     boxes[i].onclick = null;
   }
