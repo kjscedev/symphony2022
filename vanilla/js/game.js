@@ -154,7 +154,7 @@ function gameOver(elem, turn) {
 function whoWon(turn) {
   const dialogBox = document.querySelector(".dialog-box");
   dialogBox.style.display = "block";
-
+  
   if (turn === playerChoice) {
     dialogBox.innerText = "You Won";
     return;
@@ -212,7 +212,7 @@ document.getElementById("reset").onclick = () => {
   for (let i = 0; i < 9; i++) {
     boxes[i].innerText = "";
     boxes[i].style.backgroundColor = "transparent";
-    boxes[i].style.color = "#848484";
+    boxes[i].style.color = "#3e0d80";
     boxes[i].onclick = null;
   }
   return startGame();

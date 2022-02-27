@@ -2,6 +2,10 @@ body {
   background-image: url("../assets/background.gif");
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 @media (max-width: 480px) {
   body {
     background-image: url("../assets/mobile_background.gif");
@@ -17,7 +21,7 @@ canvas {
 }
 
 .logo {
-  height: 250px;
+  width: 350px;
 }
 .gallery-container {
   display: flex;
@@ -29,6 +33,7 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
 }
 .gallery {
   height: 30px;
@@ -40,6 +45,7 @@ canvas {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  padding-bottom: 30px;
 }
 
 .contact {
@@ -75,7 +81,7 @@ canvas {
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Source Sans Pro";
   font-weight: 700;
 }
 .btn:hover {
@@ -139,17 +145,22 @@ canvas {
   grid-template-rows: repeat(3, 8rem);
   user-select: none;
   position: relative;
-  background-color: transparent;
+  background-color: #fff;
+  border: 2px solid;
+  border-color: #3e0d80;
+  border-radius: 25px;
 }
 
 .box {
   font-size: 7rem;
+  font-family: "Source Sans Pro";
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   border: 2px solid #3e0d80;
   color: #3e0d80;
+  
 }
 
 @media screen and (max-width: 500px) {
@@ -168,6 +179,7 @@ canvas {
 
 .box-1 {
   border-width: 0 2px 2px 0;
+  border-top-left-radius: 25px;
 }
 
 .box-2 {
@@ -176,6 +188,7 @@ canvas {
 
 .box-3 {
   border-width: 0 0 2px 2px;
+  border-top-right-radius: 25px;
 }
 
 .box-4 {
@@ -188,6 +201,7 @@ canvas {
 
 .box-7 {
   border-width: 2px 2px 0 0;
+  border-bottom-left-radius: 25px;
 }
 
 .box-8 {
@@ -196,6 +210,7 @@ canvas {
 
 .box-9 {
   border-width: 2px 0 0 2px;
+  border-bottom-right-radius: 25px;
 }
 
 .option-box {
@@ -211,6 +226,8 @@ canvas {
   background-color: transparent;
   color: #3e0d80;
   padding: 1rem;
+  font-family: "Source Sans Pro";
+  font-weight: 800;
 }
 
 .option-box .options {
@@ -227,7 +244,8 @@ canvas {
   padding: 5px 1rem;
   font-size: 3rem;
   white-space: nowrap;
-  background-color: rgb(62, 13, 128, 0.9);
+  background-color: #3e0d80;
+  border-radius: 20px;
   color: aliceblue;
   position: absolute;
   left: 50%;
@@ -241,8 +259,11 @@ canvas {
   padding: 6px 1rem;
   background-color: transparent;
   color: #3e0d80;
-  border: none;
+  border: 2.5px solid;
+  border-color: #3e0d80;
+  border-radius: 50px;
   font-weight: bold;
   cursor: pointer;
   font-family: "Source Sans Pro";
+  font-size: 1.5rem;
 }
