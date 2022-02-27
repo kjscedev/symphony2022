@@ -84,9 +84,6 @@
         <!-- {/* game  */} -->
         <div class="col game-col">
           <div class="gamecontainer">
-           
-          </div>
-
           <!-- <canvas id="myCanvas"></canvas> -->
           <div class="tictactoe">
             <div class="wrapper">
@@ -100,17 +97,17 @@
               <div class="box box-8" data-index='7'></div>
               <div class="box box-9" data-index='8'></div>
               <div class="option-box">
-                 <p>Play As</p>
-                 <div class="options">
-                     <h1 class="option">x</h1>
-                     <h1 class="option">o</h1>
-               </div>
-               </div>
-               <div class="dialog-box"></div>
-           </div>
-           <button id='reset'>Reset Game</button>
-          </div>
-    
+                <p>Play As</p>
+                <div class="options">
+                    <h1 class="option">x</h1>
+                    <h1 class="option">o</h1>
+              </div>
+            </div>
+            <div class="dialog-box"></div>
+            </div>
+              <button id='reset'>Reset Game</button>
+            </div>
+        
           <!-- <div class="slider"></div> -->
         </div>
       </div>
@@ -128,4 +125,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script>
+    var t = gsap.timeline();
+    t.from('.logo',{
+      duration: 1,
+      y: 50,
+      opacity: 0
+    }).from('.gallery-container',{
+      duration: 1,
+      y: 50,
+      opacity: 0
+    }).from('.tictactoe',{
+      duration: 1,
+      y: 50,
+      opacity: 0
+    })
+  </script>
 </html>

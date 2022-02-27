@@ -65,6 +65,7 @@ canvas {
 }
 
 .btn {
+  position: relative;
   box-sizing: border-box;
   appearance: none;
   background-color: transparent;
