@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./assets/logo-favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="Symphony 2022"
+      content="Official Website for KJSCE Symphony 2022"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet"/>
+
+    <title>Symphony 2022</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- {/* header */}x` -->
+      <div class="col" style="padding-bottom: 50px;">
+        <div class="contact">
+          <img alt="youtube" class="icons" src="./assets/youtube.png" onclick="openYoutube()"></img>
+          <img alt="twitter" class="icons" src="./assets/twitter.png" onclick="openTwitter()"></img>
+          <img alt="facebook" class="icons" src="./assets/facebook.png" onclick="openFacebook()"></img>
+          <img alt="insta" class="icons" src="./assets/insta.png" onclick="openInstagram()"></img>
+        </div>
+      </div>
+      <!-- {/* main */} -->
+      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mt-1">
+        <div class="col">
+          <!-- {/* logo */} -->
+          <div class="d-flex justify-content-center align-items-center" >
+            <img
+              alt="Symphony"
+              class="logo"
+              src="./assets/logo_Sym.png"
+            ></img>
+          </div>
+          <div class="gallery-container">
+            <!-- {/* gallery */} -->
+            <!-- {/* <img alt="Gallery" class="logo" src="/assets/gallery.png"></img> */} -->
+            <!-- <LatinPop/> -->
+            <!-- {/* icons  */} -->
+           <div id="images">
+            <div><img src="./assets/9.png" height=400" width="350"/></div>
+           </div>
+
+          <div style="display: flex; flex-direction: column; color: #3E0D80; font-family: Source Sans Pro; font-weight: 800; font-size: 40px;">
+              <div class="gal-aftermovie" onclick="openGallery()">
+                <img
+                  alt="gallery"
+                  class="gallery"
+                  src="./assets/gallery-icon.png"
+                  style="width: 40px;height: 38px;"
+                ></img>
+                Gallery
+              </div>
+              <div class="am-container" onclick="openAfterMovie()">
+                <img
+                  alt="aftermovie"
+                  class="gallery"
+                  src="./assets/aftermovie.png"
+                  style="width: 40px;height: 38px;"
+                ></img>
+                Aftermovie
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- {/* game  */} -->
+        <div class="col game-col">
+          <div class="gamecontainer">
+          <!-- <canvas id="myCanvas"></canvas> -->
+          <div class="tictactoe">
+            <div class="wrapper">
+              <div class="box box-1" data-index='0'></div>
+              <div class="box box-2" data-index='1'></div>
+              <div class="box box-3" data-index='2'></div>
+              <div class="box box-4" data-index='3'></div>
+              <div class="box" data-index='4'></div>
+              <div class="box box-6" data-index='5'></div>
+              <div class="box box-7" data-index='6'></div>
+              <div class="box box-8" data-index='7'></div>
+              <div class="box box-9" data-index='8'></div>
+              <div class="option-box">
+                <p>Play As</p>
+                <div class="options">
+                    <h1 class="option">x</h1>
+                    <h1 class="option">o</h1>
+              </div>
+            </div>
+            <div class="dialog-box"></div>
+            </div>
+              <button id='reset'>Reset Game</button>
+            </div>
+        
+          <!-- <div class="slider"></div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- game js -->
+    <script src="./js/game.js"></script>
+    <!-- <script src="./js/anim.js"></script> -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script>
+    var t = gsap.timeline();
+    t.from('.logo',{
+      duration: 1,
+      y: 50,
+      opacity: 0
+    }).from('.gallery-container',{
+      duration: 1,
+      y: 50,
+      opacity: 0
+    }).from('.tictactoe',{
+      duration: 1,
+      y: 50,
+      opacity: 0
+    })
+  </script>
+</html>
