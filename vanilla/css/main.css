@@ -21,7 +21,8 @@ canvas {
 }
 
 .logo {
-  width: 350px;
+  width: 375px;
+  padding-bottom: 30px;
 }
 .gallery-container {
   display: flex;
@@ -146,7 +147,7 @@ canvas {
   user-select: none;
   position: relative;
   background-color: #fff;
-  border: 2px solid;
+  border: 3px solid;
   border-color: #3e0d80;
   border-radius: 25px;
 }
